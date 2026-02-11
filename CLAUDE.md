@@ -57,4 +57,4 @@ composer quality    # lint + analyse
 - Ne pas commiter les fichiers .env.local ou des secrets
 - Preferer les types stricts et les return types sur toutes les methodes
 - JAMAIS de trace de Claude dans les commits (pas de Co-Authored-By, pas de mention)
-- Push, commit, merge autorises librement
+- **JAMAIS push ou commit sans demander explicitement a l'utilisateur avant**
