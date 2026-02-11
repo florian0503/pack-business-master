@@ -2,9 +2,9 @@ name: Quality
 
 on:
   push:
-    branches: [main]
+    branches: ['**']
   pull_request:
-    branches: [main]
+    branches: [main, develop]
 
 jobs:
   php-cs-fixer:
