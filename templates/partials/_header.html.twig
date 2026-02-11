@@ -1,38 +1,24 @@
+{% from 'partials/_icons.html.twig' import phone, email, facebook, instagram, linkedin %}
+
+<header class="site-header" id="site-header">
+
 {# Top Bar #}
 <div class="top-bar">
     <div class="container">
         <div class="top-bar__contact">
             <a href="tel:+33123456789">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.24 1.01l-2.2 2.2z"/>
-                </svg>
+                {{ phone() }}
                 +33 1 23 45 67 89
             </a>
             <a href="mailto:contact@example.com">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
-                </svg>
+                {{ email() }}
                 contact@example.com
             </a>
         </div>
         <div class="top-bar__social">
-            <a href="#" aria-label="Facebook">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z"/>
-                </svg>
-            </a>
-            <a href="#" aria-label="Instagram">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/>
-                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
-                </svg>
-            </a>
-            <a href="#" aria-label="LinkedIn">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6zM2 9h4v12H2V9zm2-6a2 2 0 110 4 2 2 0 010-4z"/>
-                </svg>
-            </a>
+            <a href="#" aria-label="Facebook">{{ facebook() }}</a>
+            <a href="#" aria-label="Instagram">{{ instagram() }}</a>
+            <a href="#" aria-label="LinkedIn">{{ linkedin() }}</a>
         </div>
     </div>
 </div>
@@ -62,17 +48,31 @@
     </div>
 </nav>
 
+</header>
+
 <script>
     document.addEventListener('DOMContentLoaded', function () {
-        const toggle = document.querySelector('.navbar__toggle');
-        const menu = document.getElementById('navbar-menu');
+        var toggle = document.querySelector('.navbar__toggle');
+        var menu = document.getElementById('navbar-menu');
 
-        if (toggle && menu) {
+        var header = document.getElementById('site-header');
+
+        if (toggle && menu && header) {
             toggle.addEventListener('click', function () {
-                menu.classList.toggle('is-open');
-                const expanded = toggle.getAttribute('aria-expanded') === 'true';
-                toggle.setAttribute('aria-expanded', String(!expanded));
+                var isOpen = menu.classList.toggle('is-open');
+                toggle.classList.toggle('is-active', isOpen);
+                header.classList.toggle('menu-open', isOpen);
+                toggle.setAttribute('aria-expanded', String(isOpen));
             });
+        }
+
+        /* Header transparent → blanc au scroll */
+        if (header) {
+            var onScroll = function () {
+                header.classList.toggle('is-scrolled', window.scrollY > 80);
+            };
+            window.addEventListener('scroll', onScroll, { passive: true });
+            onScroll();
         }
     });
 </script>
