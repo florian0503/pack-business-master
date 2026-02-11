@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone:*)",
+      "Bash(php:*)",
+      "Bash(composer:*)",
+      "Bash(symfony:*)",
+      "Bash(where:*)",
+      "Bash(git --version:*)",
+      "Bash(xcopy:*)",
+      "Bash(git init:*)",
+      "Bash(git branch:*)",
+      "Bash(git status:*)",
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\ninit: projet Symfony 8.0 skeleton avec outils qualité\n\n- Symfony 8.0 skeleton \\(minimal\\)\n- PHP CS Fixer \\(formatage @Symfony\\)\n- PHPStan level 6 \\(analyse statique\\)\n- Makefile + scripts Composer\n- GitHub Actions CI/CD pipeline\n- README avec instructions setup Laragon\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git config:*)",
+      "Bash(git commit:*)",
+      "Bash(git filter-branch:*)",
+      "Bash(git remote add:*)",
+      "Bash(git push:*)"
+    ]
+  }
+}
