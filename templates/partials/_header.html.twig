@@ -1,6 +1,7 @@
 {% from 'partials/_icons.html.twig' import phone, email, facebook, instagram, linkedin %}
+{% set is_home = app.request.attributes.get('_route') == 'app_home' %}
 
-<header class="site-header" id="site-header">
+<header class="site-header{{ not is_home ? ' site-header--solid' : '' }}" id="site-header" data-transparent="{{ is_home ? '1' : '0' }}">
 
 {# Top Bar #}
 <div class="top-bar">
@@ -34,9 +35,10 @@
             <span></span>
         </button>
 
+        {% set current_route = app.request.attributes.get('_route') ?? '' %}
         <ul class="navbar__menu" id="navbar-menu">
-            <li><a href="{{ path('app_home') }}" class="navbar__link navbar__link--active">Accueil</a></li>
-            <li><a href="#" class="navbar__link">Services</a></li>
+            <li><a href="{{ path('app_home') }}" class="navbar__link{{ current_route == 'app_home' ? ' navbar__link--active' : '' }}">Accueil</a></li>
+            <li><a href="{{ path('app_services') }}" class="navbar__link{{ current_route == 'app_services' ? ' navbar__link--active' : '' }}">Services</a></li>
             <li><a href="#" class="navbar__link">À propos</a></li>
             <li><a href="#" class="navbar__link">Blog</a></li>
             <li><a href="#" class="navbar__link">Galerie</a></li>
@@ -66,8 +68,8 @@
             });
         }
 
-        /* Header transparent → blanc au scroll */
-        if (header) {
+        /* Header transparent → blanc au scroll (uniquement page accueil) */
+        if (header && header.dataset.transparent === '1') {
             var onScroll = function () {
                 header.classList.toggle('is-scrolled', window.scrollY > 80);
             };

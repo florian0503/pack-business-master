@@ -286,17 +286,16 @@
         </div>
     </section>
 
-    {# Section Témoignages #}
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Ce que disent nos clients</h2>
-                <p class="section-subtitle">Leur confiance est notre plus grande fierté</p>
+    {# Section Témoignages — Horizontal Scroll #}
+    <section class="testimonials testimonials--pinned" id="testimonials">
+        <div class="testimonials__pin">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Ce que disent nos clients</h2>
+                    <p class="section-subtitle">Leur confiance est notre plus grande fierté</p>
+                </div>
             </div>
-        </div>
-        <div class="testimonials__slider">
-            <div class="testimonials__track">
-                {% for i in 1..2 %}
+            <div class="testimonials__track" id="testimonials-track">
                 <div class="testimonials__card">
                     <div class="testimonials__stars">
                         {% for s in 1..5 %}{{ star() }}{% endfor %}
@@ -380,10 +379,38 @@
                         </div>
                     </div>
                 </div>
-                {% endfor %}
             </div>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            if (typeof gsap === 'undefined' || window.innerWidth < 769) return;
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            var track = document.getElementById('testimonials-track');
+            var pin = document.querySelector('.testimonials__pin');
+            if (!track || !pin) return;
+
+            var headerH = document.getElementById('site-header') ? document.getElementById('site-header').offsetHeight : 0;
+            var scrollDistance = track.scrollWidth - window.innerWidth;
+
+            gsap.to(track, {
+                x: -scrollDistance,
+                ease: 'none',
+                scrollTrigger: {
+                    trigger: '#testimonials',
+                    pin: pin,
+                    pinSpacing: true,
+                    start: 'top ' + headerH,
+                    end: '+=' + (scrollDistance + 200),
+                    scrub: 1,
+                    anticipatePin: 1
+                }
+            });
+        });
+    </script>
 
     {# Section Derniers Articles #}
     <section class="blog" id="blog">
