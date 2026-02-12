@@ -58,3 +58,4 @@ composer quality    # lint + analyse
 - Preferer les types stricts et les return types sur toutes les methodes
 - JAMAIS de trace de Claude dans les commits (pas de Co-Authored-By, pas de mention)
 - **JAMAIS push ou commit sans demander explicitement a l'utilisateur avant**
+- **JAMAIS de duplication de code** : reutiliser les classes CSS existantes, creer des composants reutilisables, ne jamais dupliquer du style si une classe existante fait deja le travail
