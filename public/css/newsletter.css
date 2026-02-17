@@ -1,0 +1,137 @@
+/* ============================================
+   NEWSLETTER
+   ============================================ */
+.newsletter {
+    padding: 80px 0;
+    background-color: #0f1c33;
+}
+
+
+.newsletter__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.newsletter__text {
+    flex: 1;
+    max-width: 480px;
+}
+
+.newsletter__title {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 12px;
+}
+
+.newsletter__desc {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    line-height: 1.7;
+}
+
+.newsletter__form {
+    flex: 1;
+    max-width: 480px;
+}
+
+.newsletter__field {
+    display: flex;
+    gap: 0;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    padding: 5px;
+    transition: border-color 0.3s;
+}
+
+.newsletter__field:focus-within {
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.newsletter__input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 14px 22px;
+    font-size: 0.95rem;
+    color: #fff;
+    font-family: inherit;
+}
+
+.newsletter__input::placeholder {
+    color: #64748b;
+}
+
+.newsletter__btn {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 50px;
+    font-size: 0.92rem;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    white-space: nowrap;
+    transition: background-color 0.2s, transform 0.15s;
+}
+
+.newsletter__btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+.newsletter__note {
+    margin-top: 14px;
+    font-size: 0.78rem;
+    color: #475569;
+    padding-left: 22px;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .newsletter {
+        padding: 56px 0;
+    }
+
+    .newsletter__inner {
+        flex-direction: column;
+        gap: 32px;
+        text-align: center;
+    }
+
+    .newsletter__text,
+    .newsletter__form {
+        max-width: 100%;
+    }
+
+    .newsletter__title {
+        font-size: 1.6rem;
+    }
+
+    .newsletter__note {
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+@media (max-width: 640px) {
+    .newsletter__field {
+        flex-direction: column;
+        border-radius: 16px;
+        padding: 8px;
+    }
+
+    .newsletter__input {
+        text-align: center;
+    }
+
+    .newsletter__btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,71 @@
+/* ============================================
+   TRUST (Ils nous font confiance)
+   ============================================ */
+.trust {
+    padding: 48px 0 56px;
+    background-color: #f8fafc;
+    overflow: hidden;
+}
+
+
+.trust__label {
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e3a5f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 36px;
+}
+
+/* Slider infini */
+.trust__slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.trust__track {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    width: max-content;
+    animation: trust-scroll 30s linear infinite;
+}
+
+.trust__track:hover {
+    animation-play-state: paused;
+}
+
+@keyframes trust-scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.trust__item {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    transition: transform 0.3s, filter 0.3s, opacity 0.3s;
+    filter: grayscale(100%);
+    opacity: 0.45;
+}
+
+.trust__item:hover {
+    filter: grayscale(0%);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.trust__item svg {
+    height: 40px;
+    width: auto;
+}

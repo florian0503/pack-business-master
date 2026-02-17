@@ -1,0 +1,142 @@
+/* ============================================
+   WHY (Pourquoi nous choisir)
+   ============================================ */
+.why {
+    padding: 90px 0;
+    background-color: #f8fafc;
+}
+
+
+.why__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.why__title {
+    font-size: 2.1rem;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 18px;
+    line-height: 1.2;
+}
+
+.why__text {
+    font-size: 0.98rem;
+    color: #64748b;
+    line-height: 1.75;
+    margin-bottom: 28px;
+}
+
+.why__list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 34px;
+}
+
+.why__list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #334155;
+}
+
+.why__list li svg {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    color: #22c55e;
+}
+
+
+/* Video */
+.why__media {
+    position: relative;
+}
+
+.why__video-wrapper {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12), 0 8px 20px rgba(15, 23, 42, 0.06);
+    aspect-ratio: 4 / 3;
+    background: #1b2a4a;
+    max-width: 420px;
+    margin-left: auto;
+}
+
+.why__video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+/* Decorative dots behind video */
+.why__media::before {
+    content: '';
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    width: 120px;
+    height: 120px;
+    background-image: radial-gradient(#2563eb 1.5px, transparent 1.5px);
+    background-size: 12px 12px;
+    opacity: 0.2;
+    z-index: -1;
+    border-radius: 8px;
+}
+
+.why__media::after {
+    content: '';
+    position: absolute;
+    bottom: -16px;
+    left: -16px;
+    width: 80px;
+    height: 80px;
+    background: #2563eb;
+    opacity: 0.08;
+    border-radius: 16px;
+    z-index: -1;
+}
+
+.why__cta--mobile {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .why__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .why__video-wrapper {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .why__cta--desktop {
+        display: none;
+    }
+
+    .why__cta--mobile {
+        display: inline-flex;
+        margin: 32px auto 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .why {
+        padding: 56px 0;
+    }
+
+    .why__title {
+        font-size: 1.6rem;
+    }
+}
