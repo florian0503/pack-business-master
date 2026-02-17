@@ -32,3 +32,6 @@
 
 /* Page a propos */
 @import url('about.css');
+
+/* Auth (login / inscription) */
+@import url('auth.css');
