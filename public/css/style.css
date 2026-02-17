@@ -807,6 +807,12 @@ ul {
     }
 }
 
+/* Section CTA centered button */
+.section-cta-wrap {
+    text-align: center;
+    margin-top: 40px;
+}
+
 /* Mobile toggle buttons (shared) */
 .section-toggle {
     display: none;
@@ -2760,6 +2766,382 @@ ul {
 
     .about-timeline__progress {
         left: 20px;
+    }
+}
+
+/* ============================================
+   TEAM STRIP (bandeau portraits accueil)
+   ============================================ */
+.team-strip {
+    padding: 80px 0 90px;
+    background-color: #f8fafc;
+    overflow: hidden;
+}
+
+.team-strip__band {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    gap: 4px;
+    height: 500px;
+}
+
+.team-strip__item {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: flex 0.5s cubic-bezier(.25,.8,.25,1);
+}
+
+.team-strip__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+    transform: scale(1);
+}
+
+/* Accordéon : item actif s'élargit, les autres rétrécissent */
+.team-strip__band.is-hovered .team-strip__item {
+    flex: 0.6;
+}
+
+.team-strip__band.is-hovered .team-strip__item.is-active {
+    flex: 3;
+}
+
+/* Bouton + */
+.team-strip__more {
+    flex: 0 0 auto;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0f172a;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, flex 0.5s cubic-bezier(.25,.8,.25,1);
+}
+
+.team-strip__more span {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.team-strip__more:hover {
+    background: #1e3a5f;
+}
+
+.team-strip__more:hover span {
+    color: #fff;
+    transform: scale(1.15);
+}
+
+/* Info en dessous */
+.team-strip__info {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: 56px;
+}
+
+.team-strip__info-inner {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s, left 0.4s cubic-bezier(.25,.8,.25,1);
+    padding-top: 14px;
+    white-space: nowrap;
+}
+
+.team-strip__info-inner.is-visible {
+    opacity: 1;
+}
+
+.team-strip__info-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.team-strip__info-role {
+    font-size: 0.9rem;
+    color: #2563eb;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+@media (max-width: 1024px) {
+    .team-strip__band {
+        height: 420px;
+    }
+
+    .team-strip__item:nth-child(n+8) {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .team-strip__band {
+        height: 360px;
+    }
+
+    .team-strip__item:nth-child(n+6) {
+        display: none;
+    }
+}
+
+@media (max-width: 640px) {
+    .team-strip {
+        padding: 56px 0 64px;
+    }
+
+    .team-strip__band {
+        height: 300px;
+    }
+
+    .team-strip__item:nth-child(n+5) {
+        display: none;
+    }
+
+    .team-strip__more {
+        width: 60px;
+    }
+}
+
+@media (max-width: 400px) {
+    .team-strip__item:nth-child(n+4) {
+        display: none;
+    }
+}
+
+/* ============================================
+   TEAM MAP (carte interactive)
+   ============================================ */
+.team-map {
+    padding: 60px 0 90px;
+    background-color: #f8fafc;
+}
+
+.team-map__layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: start;
+}
+
+.team-map__svg-wrap {
+    text-align: center;
+}
+
+.team-map__svg {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+}
+
+.team-map__region {
+    fill: #e2e8f0;
+    stroke: #fff;
+    stroke-width: 1.2;
+    cursor: pointer;
+    transition: fill 0.3s, transform 0.15s;
+    transform-origin: center;
+}
+
+.team-map__region:hover {
+    fill: #93c5fd;
+}
+
+.team-map__region.is-active {
+    fill: #2563eb;
+}
+
+.team-map__selected-label {
+    margin-top: 16px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* Results */
+.team-map__results-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.team-map__results-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.team-map__reset {
+    background: none;
+    border: 2px solid #2563eb;
+    color: #2563eb;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: inherit;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.team-map__reset:hover {
+    background: #2563eb;
+    color: #fff;
+}
+
+.team-map__results-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-height: 480px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Mini card */
+.team-map__card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px;
+    background: #fff;
+    border: 1px solid #e8ecf2;
+    border-radius: 12px;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+
+.team-map__card:hover {
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.12);
+    border-color: #2563eb;
+}
+
+.team-map__card img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.team-map__card-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.team-map__card-role {
+    font-size: 0.82rem;
+    color: #2563eb;
+    font-weight: 500;
+    margin-top: 2px;
+}
+
+.team-map__empty {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-style: italic;
+    padding: 20px 0;
+}
+
+@media (max-width: 768px) {
+    .team-map {
+        padding: 56px 0 64px;
+    }
+
+    .team-map__layout {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .team-map__svg {
+        max-width: 320px;
+    }
+
+    .team-map__results-grid {
+        max-height: none;
+    }
+}
+
+/* ============================================
+   TEAM PAGE (page equipe)
+   ============================================ */
+.team-intro {
+    padding: 80px 0 60px;
+    background-color: #fff;
+}
+
+.team-intro__content {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.team-intro__desc {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.75;
+    margin-top: 16px;
+}
+
+.team-page {
+    padding: 60px 0 90px;
+    background-color: #fff;
+}
+
+.team-page__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+}
+
+.team-page__bio {
+    font-size: 0.82rem;
+    color: #64748b;
+    line-height: 1.6;
+    margin-top: 8px;
+}
+
+@media (max-width: 1024px) {
+    .team-page__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .team-page__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-intro {
+        padding: 56px 0 48px;
+    }
+
+    .team-page {
+        padding: 40px 0 64px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-page__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
     }
 }
 
