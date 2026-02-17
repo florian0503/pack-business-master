@@ -39,7 +39,7 @@
         <ul class="navbar__menu" id="navbar-menu">
             <li><a href="{{ path('app_home') }}" class="navbar__link{{ current_route == 'app_home' ? ' navbar__link--active' : '' }}">Accueil</a></li>
             <li><a href="{{ path('app_services') }}" class="navbar__link{{ current_route == 'app_services' ? ' navbar__link--active' : '' }}">Services</a></li>
-            <li><a href="#" class="navbar__link">À propos</a></li>
+            <li><a href="{{ path('app_about') }}" class="navbar__link{{ current_route == 'app_about' ? ' navbar__link--active' : '' }}">À propos</a></li>
             <li><a href="#" class="navbar__link">Blog</a></li>
             <li><a href="#" class="navbar__link">Galerie</a></li>
             <li><a href="#" class="navbar__link">Contact</a></li>
@@ -68,7 +68,6 @@
             });
         }
 
-        /* Header transparent → blanc au scroll (uniquement page accueil) */
         if (header && header.dataset.transparent === '1') {
             var onScroll = function () {
                 header.classList.toggle('is-scrolled', window.scrollY > 80);

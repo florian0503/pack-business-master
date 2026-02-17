@@ -1,0 +1,301 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProService — À propos{% endblock %}
+
+{% block body %}
+    {# Page Banner #}
+    <section class="page-banner">
+        <div class="page-banner__content">
+            <h1 class="page-banner__title">À propos</h1>
+            <p class="page-banner__subtitle">Découvrez l'histoire, les valeurs et la vision derrière ProService</p>
+            <div class="page-banner__breadcrumb">
+                <a href="{{ path('app_home') }}">Accueil</a>
+                <span>/</span>
+                <span>À propos</span>
+            </div>
+        </div>
+    </section>
+
+    {# Notre Histoire #}
+    <section class="about-story">
+        <div class="container">
+            <div class="about-story__grid">
+                <div class="about-story__text reveal reveal--left">
+                    <div class="section-header section-header--left">
+                        <h2 class="section-title">Notre Histoire</h2>
+                        <p class="section-subtitle">Une aventure entrepreneuriale guidée par l'excellence</p>
+                    </div>
+                    <p class="about-story__desc">
+                        Fondée en 2010, ProService est née de la conviction que chaque entreprise mérite un accompagnement sur mesure pour atteindre son plein potentiel. Ce qui a commencé comme un petit cabinet de conseil est devenu en quelques années un acteur reconnu du conseil en stratégie et transformation.
+                    </p>
+                    <p class="about-story__desc">
+                        Notre mission est simple : transformer les ambitions de nos clients en résultats concrets. Nous croyons que la réussite repose sur l'écoute, l'expertise et un engagement sans faille à chaque étape du projet.
+                    </p>
+                    <blockquote class="about-story__quote">
+                        <p>"Notre plus grande fierté n'est pas le nombre de projets réalisés, mais la confiance que nos clients nous renouvellent année après année."</p>
+                        <cite>— Thomas Martin, Fondateur & Directeur Général</cite>
+                    </blockquote>
+                </div>
+                <div class="about-story__image reveal reveal--right">
+                    <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=600&q=80" alt="Équipe ProService en réunion" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# Chiffres Clés #}
+    <section class="about-stats" id="about-stats">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title section-title--light">Nos Chiffres Clés</h2>
+                <p class="section-subtitle section-subtitle--light">Des résultats qui parlent d'eux-mêmes</p>
+            </div>
+            <div class="about-stats__grid" data-stagger>
+                <div class="about-stats__item">
+                    <span class="about-stats__number" data-count="500">0</span>
+                    <span class="about-stats__suffix">+</span>
+                    <p class="about-stats__label">Projets réalisés</p>
+                </div>
+                <div class="about-stats__item">
+                    <span class="about-stats__number" data-count="15">0</span>
+                    <span class="about-stats__suffix"></span>
+                    <p class="about-stats__label">Années d'expérience</p>
+                </div>
+                <div class="about-stats__item">
+                    <span class="about-stats__number" data-count="98">0</span>
+                    <span class="about-stats__suffix">%</span>
+                    <p class="about-stats__label">Clients satisfaits</p>
+                </div>
+                <div class="about-stats__item">
+                    <span class="about-stats__number" data-count="50">0</span>
+                    <span class="about-stats__suffix">+</span>
+                    <p class="about-stats__label">Experts dédiés</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# Nos Valeurs #}
+    <section class="about-values">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Nos Valeurs</h2>
+                <p class="section-subtitle">Les principes qui guident chacune de nos actions</p>
+            </div>
+            <div class="about-values__grid" data-stagger>
+
+                <div class="services__card">
+                    <div class="services__icon services__icon--blue">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="services__name">Excellence</h3>
+                    <p class="services__desc">Nous visons l'excellence dans chaque projet, chaque interaction et chaque livrable. La qualité n'est pas un objectif, c'est un standard.</p>
+                </div>
+
+                <div class="services__card">
+                    <div class="services__icon services__icon--amber">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="3"/>
+                            <line x1="12" y1="2" x2="12" y2="5"/>
+                            <line x1="12" y1="19" x2="12" y2="22"/>
+                            <line x1="2" y1="12" x2="5" y2="12"/>
+                            <line x1="19" y1="12" x2="22" y2="12"/>
+                            <line x1="4.93" y1="4.93" x2="7.05" y2="7.05"/>
+                            <line x1="16.95" y1="16.95" x2="19.07" y2="19.07"/>
+                            <line x1="4.93" y1="19.07" x2="7.05" y2="16.95"/>
+                            <line x1="16.95" y1="7.05" x2="19.07" y2="4.93"/>
+                        </svg>
+                    </div>
+                    <h3 class="services__name">Innovation</h3>
+                    <p class="services__desc">Nous explorons constamment de nouvelles approches et technologies pour offrir des solutions à la pointe de l'innovation à nos clients.</p>
+                </div>
+
+                <div class="services__card">
+                    <div class="services__icon services__icon--emerald">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 010 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="services__name">Proximité</h3>
+                    <p class="services__desc">Nous cultivons des relations de confiance avec nos clients. Chaque projet est unique et mérite une attention personnalisée et un suivi dédié.</p>
+                </div>
+
+                <div class="services__card">
+                    <div class="services__icon services__icon--rose">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+                        </svg>
+                    </div>
+                    <h3 class="services__name">Engagement</h3>
+                    <p class="services__desc">Nous nous engageons pleinement dans la réussite de nos clients. Leur succès est notre plus grande motivation et notre meilleure récompense.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {# Timeline — Notre Parcours #}
+    <section class="about-timeline">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Notre Parcours</h2>
+                <p class="section-subtitle">Les grandes étapes qui ont façonné ProService</p>
+            </div>
+            <div class="about-timeline__line">
+                <div class="about-timeline__progress" id="timeline-progress"></div>
+
+                <div class="about-timeline__item about-timeline__item--left reveal reveal--left">
+                    <div class="about-timeline__dot"></div>
+                    <div class="about-timeline__card">
+                        <span class="about-timeline__year">2010</span>
+                        <h3 class="about-timeline__title">Création de ProService</h3>
+                        <p class="about-timeline__desc">Thomas Martin fonde ProService avec la vision d'offrir un conseil stratégique accessible et personnalisé aux entreprises de toute taille.</p>
+                    </div>
+                </div>
+
+                <div class="about-timeline__item about-timeline__item--right reveal reveal--right">
+                    <div class="about-timeline__dot"></div>
+                    <div class="about-timeline__card">
+                        <span class="about-timeline__year">2014</span>
+                        <h3 class="about-timeline__title">Expansion nationale</h3>
+                        <p class="about-timeline__desc">Ouverture de bureaux à Lyon et Marseille. L'équipe passe de 5 à 20 collaborateurs pour répondre à une demande croissante.</p>
+                    </div>
+                </div>
+
+                <div class="about-timeline__item about-timeline__item--left reveal reveal--left">
+                    <div class="about-timeline__dot"></div>
+                    <div class="about-timeline__card">
+                        <span class="about-timeline__year">2017</span>
+                        <h3 class="about-timeline__title">Lancement du pôle Formation</h3>
+                        <p class="about-timeline__desc">Création de notre centre de formation certifié, proposant des programmes sur mesure pour accompagner la montée en compétences.</p>
+                    </div>
+                </div>
+
+                <div class="about-timeline__item about-timeline__item--right reveal reveal--right">
+                    <div class="about-timeline__dot"></div>
+                    <div class="about-timeline__card">
+                        <span class="about-timeline__year">2021</span>
+                        <h3 class="about-timeline__title">Cap sur le digital</h3>
+                        <p class="about-timeline__desc">Lancement de notre offre de transformation digitale, intégrant l'IA et l'automatisation dans nos solutions de conseil.</p>
+                    </div>
+                </div>
+
+                <div class="about-timeline__item about-timeline__item--left reveal reveal--left">
+                    <div class="about-timeline__dot"></div>
+                    <div class="about-timeline__card">
+                        <span class="about-timeline__year">2025</span>
+                        <h3 class="about-timeline__title">500+ projets et toujours plus loin</h3>
+                        <p class="about-timeline__desc">Aujourd'hui, ProService c'est plus de 50 experts, 500 projets réalisés et un taux de satisfaction de 98%. L'aventure continue.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    {# CTA Final #}
+    <section class="svc-cta" data-scroll-top-light>
+        <div class="container">
+            <div class="svc-cta__inner reveal">
+                <h2 class="svc-cta__title">Envie de travailler avec nous ?</h2>
+                <p class="svc-cta__desc">Rejoignez les entreprises qui nous font confiance. Parlons ensemble de vos ambitions et construisons votre succès.</p>
+                <div class="svc-cta__actions">
+                    <a href="#" class="btn btn--white">Nous contacter</a>
+                    <a href="tel:+33123456789" class="btn btn--outline-dark">+33 1 23 45 67 89</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {# Timeline progress au scroll #}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var progress = document.getElementById('timeline-progress');
+            var line = progress ? progress.parentElement : null;
+            var items = document.querySelectorAll('.about-timeline__item');
+            if (!progress || !line || !items.length) return;
+
+            function updateProgress() {
+                var lineRect = line.getBoundingClientRect();
+                var lineHeight = line.offsetHeight;
+                var viewportMiddle = window.innerHeight * 0.5;
+                var scrolled = viewportMiddle - lineRect.top;
+                var ratio = Math.max(0, Math.min(1, scrolled / lineHeight));
+                progress.style.height = (ratio * 100) + '%';
+
+                var progressY = lineRect.top + (ratio * lineHeight);
+
+                items.forEach(function (item) {
+                    var card = item.querySelector('.about-timeline__card');
+                    var dot = item.querySelector('.about-timeline__dot');
+                    if (!card || !dot) return;
+                    var cardRect = card.getBoundingClientRect();
+                    var cardCenter = cardRect.top + cardRect.height / 2;
+                    if (progressY >= cardCenter) {
+                        dot.classList.add('is-active');
+                    } else {
+                        dot.classList.remove('is-active');
+                    }
+                });
+            }
+
+            window.addEventListener('scroll', updateProgress, { passive: true });
+            updateProgress();
+        });
+    </script>
+
+    {# Compteur animé #}
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var counters = document.querySelectorAll('.about-stats__number[data-count]');
+            if (!counters.length) return;
+
+            var animated = false;
+
+            function animateCounters() {
+                if (animated) return;
+                animated = true;
+
+                counters.forEach(function (counter) {
+                    var target = parseInt(counter.getAttribute('data-count'), 10);
+                    var duration = 2000;
+                    var start = 0;
+                    var startTime = null;
+
+                    function step(timestamp) {
+                        if (!startTime) startTime = timestamp;
+                        var progress = Math.min((timestamp - startTime) / duration, 1);
+                        var eased = 1 - Math.pow(1 - progress, 3);
+                        counter.textContent = Math.floor(eased * target);
+                        if (progress < 1) {
+                            requestAnimationFrame(step);
+                        } else {
+                            counter.textContent = target;
+                        }
+                    }
+
+                    requestAnimationFrame(step);
+                });
+            }
+
+            var observer = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        observer.disconnect();
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            var section = document.getElementById('about-stats');
+            if (section) {
+                observer.observe(section);
+            }
+        });
+    </script>
+{% endblock %}
