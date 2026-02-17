@@ -187,6 +187,9 @@
             <button class="section-toggle" id="services-toggle">
                 Voir plus <span>&darr;</span>
             </button>
+            <div class="section-cta-wrap">
+                <a href="{{ path('app_services') }}" class="btn btn--primary">Voir tous nos services <span>&rarr;</span></a>
+            </div>
         </div>
     </section>
 
@@ -207,7 +210,7 @@
                         <li>{{ check() }} Accompagnement personnalisé et suivi continu</li>
                         <li>{{ check() }} Satisfaction client de 98%</li>
                     </ul>
-                    <a href="#" class="btn btn--primary why__cta why__cta--desktop">Découvrir notre histoire</a>
+                    <a href="{{ path('app_about') }}" class="btn btn--primary why__cta why__cta--desktop">Découvrir notre histoire</a>
                 </div>
                 <div class="why__media reveal reveal--right">
                     <div class="why__video-wrapper">
@@ -216,7 +219,7 @@
                         </video>
                     </div>
                 </div>
-                <a href="#" class="btn btn--primary why__cta why__cta--mobile">Découvrir notre histoire</a>
+                <a href="{{ path('app_about') }}" class="btn btn--primary why__cta why__cta--mobile">Découvrir notre histoire</a>
             </div>
         </div>
     </section>
@@ -502,75 +505,97 @@
         </div>
     </section>
 
-    {# Section Notre Équipe #}
-    <section class="team" id="equipe">
+    {# Section Notre Équipe — Bandeau portraits #}
+    <section class="team-strip" id="equipe">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Notre Équipe</h2>
                 <p class="section-subtitle">Des experts passionnés à votre service</p>
             </div>
-            <div class="team__grid" data-stagger>
-
-                <div class="team__card">
-                    <div class="team__photo">
-                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Thomas Martin" loading="lazy">
-                        <div class="team__social">
-                            <a href="#" aria-label="LinkedIn">{{ linkedin() }}</a>
-                            <a href="#" aria-label="Twitter">{{ twitter() }}</a>
-                        </div>
-                    </div>
-                    <div class="team__info">
-                        <h3 class="team__name">Thomas Martin</h3>
-                        <p class="team__role">Directeur Général</p>
-                    </div>
-                </div>
-
-                <div class="team__card">
-                    <div class="team__photo">
-                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Marie Dubois" loading="lazy">
-                        <div class="team__social">
-                            <a href="#" aria-label="LinkedIn">{{ linkedin() }}</a>
-                            <a href="#" aria-label="Twitter">{{ twitter() }}</a>
-                        </div>
-                    </div>
-                    <div class="team__info">
-                        <h3 class="team__name">Marie Dubois</h3>
-                        <p class="team__role">Directrice Stratégie</p>
-                    </div>
-                </div>
-
-                <div class="team__card">
-                    <div class="team__photo">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" alt="Lucas Moreau" loading="lazy">
-                        <div class="team__social">
-                            <a href="#" aria-label="LinkedIn">{{ linkedin() }}</a>
-                            <a href="#" aria-label="Twitter">{{ twitter() }}</a>
-                        </div>
-                    </div>
-                    <div class="team__info">
-                        <h3 class="team__name">Lucas Moreau</h3>
-                        <p class="team__role">Chef de Projet</p>
-                    </div>
-                </div>
-
-                <div class="team__card">
-                    <div class="team__photo">
-                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" alt="Camille Petit" loading="lazy">
-                        <div class="team__social">
-                            <a href="#" aria-label="LinkedIn">{{ linkedin() }}</a>
-                            <a href="#" aria-label="Twitter">{{ twitter() }}</a>
-                        </div>
-                    </div>
-                    <div class="team__info">
-                        <h3 class="team__name">Camille Petit</h3>
-                        <p class="team__role">Responsable Formation</p>
-                    </div>
-                </div>
-
-            </div>
-            <button class="section-toggle" id="team-toggle">
-                Voir toute notre équipe <span>&darr;</span>
-            </button>
         </div>
+        <div class="team-strip__band" id="team-strip-band">
+            <div class="team-strip__item" data-name="Thomas Martin" data-role="Directeur Général">
+                <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" alt="Thomas Martin" loading="lazy">
+            </div>
+            <div class="team-strip__item" data-name="Marie Dubois" data-role="Directrice Stratégie">
+                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" alt="Marie Dubois" loading="lazy">
+            </div>
+            <div class="team-strip__item" data-name="Lucas Moreau" data-role="Directeur des Opérations">
+                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=400&q=80" alt="Lucas Moreau" loading="lazy">
+            </div>
+            <div class="team-strip__item" data-name="Camille Petit" data-role="Directrice Formation">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" alt="Camille Petit" loading="lazy">
+            </div>
+            <div class="team-strip__item" data-name="Antoine Leroy" data-role="Consultant Senior">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" alt="Antoine Leroy" loading="lazy">
+            </div>
+            <div class="team-strip__item" data-name="Sarah Benali" data-role="Responsable Innovation">
+                <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?auto=format&fit=crop&w=400&q=80" alt="Sarah Benali" loading="lazy">
+            </div>
+            <div class="team-strip__item" data-name="Nicolas Faure" data-role="Chef de Projet">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" alt="Nicolas Faure" loading="lazy">
+            </div>
+            <div class="team-strip__item" data-name="Julie Marchand" data-role="Consultante Audit">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=400&q=80" alt="Julie Marchand" loading="lazy">
+            </div>
+            <div class="team-strip__item" data-name="David Chen" data-role="Data Analyst">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" alt="David Chen" loading="lazy">
+            </div>
+            <a href="{{ path('app_team') }}" class="team-strip__more" aria-label="Voir toute l'équipe">
+                <span>{+}</span>
+            </a>
+        </div>
+        <div class="team-strip__info" id="team-strip-info">
+            <div class="team-strip__info-inner" id="team-strip-inner">
+                <p class="team-strip__info-name" id="team-strip-name"></p>
+                <p class="team-strip__info-role" id="team-strip-role"></p>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var band = document.getElementById('team-strip-band');
+                var nameEl = document.getElementById('team-strip-name');
+                var roleEl = document.getElementById('team-strip-role');
+                var innerEl = document.getElementById('team-strip-inner');
+                var infoEl = document.getElementById('team-strip-info');
+                if (!band || !nameEl || !roleEl || !innerEl || !infoEl) return;
+
+                var items = band.querySelectorAll('.team-strip__item');
+                var activeItem = null;
+                var rafId = null;
+
+                function trackPosition() {
+                    if (!activeItem) return;
+                    var bandRect = band.getBoundingClientRect();
+                    var itemRect = activeItem.getBoundingClientRect();
+                    var centerX = itemRect.left + itemRect.width / 2 - bandRect.left;
+                    innerEl.style.left = centerX + 'px';
+                    innerEl.style.transform = 'translateX(-50%)';
+                    rafId = requestAnimationFrame(trackPosition);
+                }
+
+                items.forEach(function (item) {
+                    item.addEventListener('mouseenter', function () {
+                        band.classList.add('is-hovered');
+                        item.classList.add('is-active');
+                        activeItem = item;
+                        nameEl.textContent = item.dataset.name;
+                        roleEl.textContent = item.dataset.role;
+                        innerEl.classList.add('is-visible');
+                        if (rafId) cancelAnimationFrame(rafId);
+                        trackPosition();
+                    });
+
+                    item.addEventListener('mouseleave', function () {
+                        band.classList.remove('is-hovered');
+                        item.classList.remove('is-active');
+                        activeItem = null;
+                        innerEl.classList.remove('is-visible');
+                        if (rafId) cancelAnimationFrame(rafId);
+                    });
+                });
+            });
+        </script>
     </section>
 {% endblock %}

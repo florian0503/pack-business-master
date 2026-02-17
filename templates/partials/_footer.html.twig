@@ -21,20 +21,18 @@
                     </div>
                 </div>
 
-                {# Colonne 2 : Liens rapides #}
                 <div class="footer__col footer__col--links">
                     <h3 class="footer__title">Liens rapides</h3>
                     <ul class="footer__links">
                         <li><a href="{{ path('app_home') }}">Accueil</a></li>
-                        <li><a href="#">Nos Services</a></li>
-                        <li><a href="#">À propos</a></li>
+                        <li><a href="{{ path('app_services') }}">Nos Services</a></li>
+                        <li><a href="{{ path('app_about') }}">À propos</a></li>
                         <li><a href="#">Galerie</a></li>
                         <li><a href="#">Blog</a></li>
                         <li><a href="#">Contact</a></li>
                     </ul>
                 </div>
 
-                {# Colonne 3 : Contact #}
                 <div class="footer__col footer__col--contact">
                     <h3 class="footer__title">Contactez-nous</h3>
                     <ul class="footer__contact">
@@ -53,7 +51,6 @@
                     </ul>
                 </div>
 
-                {# Colonne 4 : Localisation #}
                 <div class="footer__col">
                     <h3 class="footer__title">Notre localisation</h3>
                     <div class="footer__map">
@@ -73,7 +70,6 @@
         </div>
     </div>
 
-    {# Bottom Bar #}
     <div class="footer__bottom">
         <div class="container">
             <div class="footer__social footer__social--mobile">
