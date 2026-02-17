@@ -13,6 +13,23 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // User dropdown
+    var dropdown = document.getElementById('user-dropdown');
+    var trigger = document.getElementById('user-dropdown-trigger');
+
+    if (dropdown && trigger) {
+        trigger.addEventListener('click', function (e) {
+            e.stopPropagation();
+            dropdown.classList.toggle('is-open');
+        });
+
+        document.addEventListener('click', function (e) {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('is-open');
+            }
+        });
+    }
+
     if (header && header.dataset.transparent === '1') {
         var onScroll = function () {
             header.classList.toggle('is-scrolled', window.scrollY > 80);
