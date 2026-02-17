@@ -1,0 +1,114 @@
+/* ============================================
+   TESTIMONIALS (Ce que disent nos clients)
+   ============================================ */
+.testimonials {
+    padding: 80px 0 90px;
+    background-color: #f8fafc;
+    overflow: hidden;
+}
+
+/* Version pinned (locomotive scroll) */
+.testimonials--pinned {
+    padding: 0;
+    overflow: visible;
+}
+
+.testimonials__pin {
+    padding: 80px 0 60px;
+    overflow: hidden;
+}
+
+.testimonials__track {
+    display: flex;
+    gap: 28px;
+    width: max-content;
+    padding: 0 60px;
+}
+
+/* Card */
+.testimonials__card {
+    flex-shrink: 0;
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border: 1px solid #e8ecf2;
+    border-radius: 16px;
+    padding: 28px 24px;
+    transition: border-color 0.3s;
+}
+
+.testimonials__card:hover {
+    border-color: #2563eb;
+}
+
+.testimonials__stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 10px;
+}
+
+.testimonials__stars svg {
+    width: 18px;
+    height: 18px;
+    color: #f59e0b;
+}
+
+.testimonials__text {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.7;
+    font-style: italic;
+    flex: 1;
+    margin-bottom: 14px;
+}
+
+.testimonials__author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.testimonials__avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #7c3aed);
+    color: #fff;
+    font-size: 0.85rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.testimonials__name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.testimonials__role {
+    font-size: 0.82rem;
+    color: #94a3b8;
+    margin-top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .testimonials {
+        padding: 56px 0 64px;
+    }
+
+    .testimonials__card {
+        width: 280px;
+    }
+}
+
+@media (max-width: 360px) {
+    .testimonials__card {
+        width: 240px;
+        padding: 22px 18px;
+    }
+}

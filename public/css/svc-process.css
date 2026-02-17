@@ -1,0 +1,145 @@
+/* ============================================
+   SVC PROCESS (Notre Approche)
+   ============================================ */
+.svc-process {
+    position: relative;
+    background: #fff;
+}
+
+.svc-process__pin {
+    padding: 80px 0 60px;
+}
+
+.svc-process__grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+    padding: 0 40px;
+}
+
+/* GSAP gere l'animation — les elements commencent invisibles */
+.svc-reveal {
+    opacity: 0;
+}
+
+.svc-process__step {
+    flex: 1;
+    max-width: 280px;
+    text-align: center;
+    padding: 40px 28px;
+    border-radius: 16px;
+    border: 1px solid #e8ecf2;
+    background: #fff;
+    position: relative;
+    transition: transform 0.35s cubic-bezier(.25,.8,.25,1),
+                box-shadow 0.35s cubic-bezier(.25,.8,.25,1),
+                border-color 0.3s;
+}
+
+.svc-process__step:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    border-color: #2563eb;
+}
+
+/* Fleche SVG entre les etapes */
+.svc-process__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 80px;
+    color: #94a3b8;
+}
+
+.svc-process__arrow svg {
+    width: 44px;
+    height: 44px;
+}
+
+.svc-process__number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.svc-process__name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 10px;
+}
+
+.svc-process__desc {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.65;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .svc-process__pin {
+        height: auto;
+        padding: 60px 0;
+    }
+
+    .svc-process__grid {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .svc-reveal {
+        opacity: 1;
+    }
+
+    .svc-process__step {
+        flex: 1 1 calc(50% - 10px);
+        max-width: none;
+    }
+
+    .svc-process__arrow {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .svc-process {
+        padding: 56px 0 64px;
+    }
+
+    .svc-process__pin {
+        height: auto;
+        padding: 48px 0;
+    }
+
+    .svc-process__grid {
+        flex-direction: column;
+        gap: 16px;
+        padding: 0 20px;
+    }
+
+    .svc-reveal {
+        opacity: 1;
+    }
+
+    .svc-process__step {
+        padding: 28px 20px;
+        flex: 1 1 100%;
+        width: 100%;
+        max-width: none;
+    }
+
+    .svc-process__arrow {
+        display: none;
+    }
+}
