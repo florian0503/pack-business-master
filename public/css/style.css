@@ -35,3 +35,6 @@
 
 /* Auth (login / inscription) */
 @import url('auth.css');
+
+/* Reservation */
+@import url('reservation.css');

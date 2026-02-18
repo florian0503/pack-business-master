@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProService — Réservation{% endblock %}
+
+{% block body %}
+    {# Page Banner #}
+    <section class="page-banner">
+        <div class="page-banner__content">
+            <h1 class="page-banner__title">Réservation</h1>
+            <p class="page-banner__subtitle">Réservez votre créneau en quelques clics</p>
+            <div class="page-banner__breadcrumb">
+                <a href="{{ path('app_home') }}">Accueil</a>
+                <span>/</span>
+                <span>Réservation</span>
+            </div>
+        </div>
+    </section>
+
+    {# Calendrier #}
+    <section class="booking">
+        <div class="container">
+            {% if not app.user %}
+                <div class="booking__auth-message reveal">
+                    <p>Vous devez être connecté pour réserver un créneau.</p>
+                    <a href="{{ path('app_login') }}" class="booking__login-btn">Se connecter</a>
+                </div>
+            {% endif %}
+
+            <div class="booking__nav reveal">
+                <button type="button" class="booking__nav-btn" id="booking-prev" aria-label="Semaine précédente">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+                    Semaine précédente
+                </button>
+                <span class="booking__nav-title" id="booking-week-title"></span>
+                <button type="button" class="booking__nav-btn" id="booking-next" aria-label="Semaine suivante">
+                    Semaine suivante
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+            </div>
+
+            <div class="booking__grid reveal" id="booking-grid">
+                {# Rempli dynamiquement par JS #}
+            </div>
+        </div>
+    </section>
+
+    {# Modal de confirmation #}
+    <div class="booking-modal" id="booking-modal">
+        <div class="booking-modal__backdrop" id="booking-modal-backdrop"></div>
+        <div class="booking-modal__dialog">
+            <div class="booking-modal__icon" id="booking-modal-icon"></div>
+            <h3 class="booking-modal__title" id="booking-modal-title"></h3>
+            <p class="booking-modal__text" id="booking-modal-text"></p>
+            <div class="booking-modal__actions">
+                <button type="button" class="booking-modal__btn booking-modal__btn--cancel" id="booking-modal-cancel">Annuler</button>
+                <button type="button" class="booking-modal__btn booking-modal__btn--confirm" id="booking-modal-confirm">Confirmer</button>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    <script>
+        window.BOOKING_CONFIG = {
+            isAuthenticated: {{ app.user ? 'true' : 'false' }},
+            userId: {{ app.user ? app.user.id : 'null' }},
+            slotsUrl: '{{ path('api_reservation_slots') }}',
+            bookUrl: '{{ path('api_reservation_book') }}',
+            cancelUrl: '{{ path('api_reservation_cancel') }}'
+        };
+    </script>
+    <script src="{{ asset('js/reservation.js') }}" defer></script>
+{% endblock %}
