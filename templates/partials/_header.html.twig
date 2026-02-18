@@ -44,7 +44,7 @@
             <li><a href="#" class="navbar__link">Blog</a></li>
             <li><a href="#" class="navbar__link">Galerie</a></li>
             <li><a href="#" class="navbar__link">Contact</a></li>
-            <li class="navbar__cta-mobile"><a href="#" class="navbar__cta">Réserver en ligne</a></li>
+            <li class="navbar__cta-mobile"><a href="{{ path('app_reservation') }}" class="navbar__cta">Réserver en ligne</a></li>
             {% if app.user %}
                 <li class="navbar__auth-mobile"><a href="#" class="navbar__link">Mon compte</a></li>
                 <li class="navbar__auth-mobile"><a href="{{ path('app_logout') }}" class="navbar__link navbar__link--danger">Déconnexion</a></li>
@@ -78,7 +78,7 @@
                     Connexion
                 </a>
             {% endif %}
-            <a href="#" class="navbar__cta navbar__cta--desktop">Réserver en ligne</a>
+            <a href="{{ path('app_reservation') }}" class="navbar__cta navbar__cta--desktop">Réserver en ligne</a>
         </div>
     </div>
 </nav>
